@@ -39,19 +39,18 @@ class MyBot(commands.Bot):
 
 bot = MyBot()
 
-# /웹사이트 명령어
-@bot.tree.command(name="웹사이트", description="클릭하면 이동할 수 있는 웹사이트 링크 임베드를 보냅니다.")
+# /웹사이트 명령어 (수정된 부분)
+@bot.tree.command(name="웹사이트", description="Wissi KR 공식 웹사이트 링크를 보냅니다.")
 async def website_command(interaction: discord.Interaction):
-    site_name = "Wissi Offcial Website"
-    site_url = "https://www.google.com"
+    site_url = "https://www.google.com" # 👈 여기에 실제 공식 웹사이트 주소를 적어주세요!
     
     embed = discord.Embed(
-        title="🌐 추천 웹사이트 안내",
-        description=f"아래 링크를 클릭하면 해당 사이트로 이동합니다:\n\n👉 **[{site_name}]({site_url})**",
+        title="Wissi KR 공식 웹사이트",
+        url=site_url, # 타이틀을 누르면 이동하도록 설정
         color=discord.Color.blue()
     )
-    embed.add_field(name="바로가기", value=f"[여기 주소를 클릭하세요]({site_url})", inline=False)
-    embed.set_footer(text="Wissi KR Bot • 안내 메시지")
+    # 임베드 설명란에 주소가 한 번 더 텍스트로 깔끔하게 노출됩니다.
+    embed.description = site_url 
 
     await interaction.response.send_message(embed=embed)
 
