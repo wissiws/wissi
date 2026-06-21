@@ -42,7 +42,7 @@ bot = MyBot()
 # /웹사이트 명령어 (수정된 부분)
 @bot.tree.command(name="웹사이트", description="Wissi KR 공식 웹사이트 링크를 보냅니다.")
 async def website_command(interaction: discord.Interaction):
-    site_url = "https://www.google.com" # 👈 여기에 실제 공식 웹사이트 주소를 적어주세요!
+    site_url = "https://www.wissi.kro.kr/" # 👈 여기에 실제 공식 웹사이트 주소를 적어주세요!
     
     embed = discord.Embed(
         title="Wissi KR 공식 웹사이트",
