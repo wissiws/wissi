@@ -42,7 +42,7 @@ class MyBot(commands.Bot):
     async def on_member_join(self, member: discord.Member):
         # ⚠️ 환영 메시지를 보낼 채널 ID를 여기에 적어주세요 (숫자만 입력)
         # 예: WELCOME_CHANNEL_ID = 123456789012345678
-        WELCOME_CHANNEL_ID = 0 
+        WELCOME_CHANNEL_ID = 1518245740286185733
         
         channel = self.get_channel(WELCOME_CHANNEL_ID)
         if channel is None:
@@ -72,20 +72,6 @@ class MyBot(commands.Bot):
         await channel.send(embed=embed)
 
 bot = MyBot()
-
-# /웹사이트 명령어
-@bot.tree.command(name="웹사이트", description="Wissi KR 공식 웹사이트 링크를 보냅니다.")
-async def website_command(interaction: discord.Interaction):
-    site_url = "https://www.google.com"
-    
-    embed = discord.Embed(
-        title="Wissi KR 공식 웹사이트",
-        url=site_url,
-        color=discord.Color.blue()
-    )
-    embed.description = site_url 
-
-    await interaction.response.send_message(embed=embed)
 
 
 # 3. 봇 실행 플로우
