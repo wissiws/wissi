@@ -61,8 +61,8 @@ def create_welcome_embed(member: discord.Member):
     
     embed = discord.Embed(
         title=f"!! {member.display_name}님이 입장했습니다.",
-        description=f"**환영합니다!**\n<@{member.id}>님,\nZERO CLOUD에 오신걸\n환영합니다.",
-        color=discord.Color.from_rgb(46, 204, 113) # 초록색 바
+        description=f"**환영합니다!**\n<@{member.id}>님,\nWissi KR에 오신걸\n환영합니다.",
+        color=discord.Color.from_rgb(46, 113, 204) # 초록색 바
     )
     embed.set_footer(text=f"입장 시간: {now} | ID: {member.id}")
     
